@@ -13,6 +13,7 @@ public class MergeSort {
 
 	}
 
+    //Recursive Code devide and conquer
 	public static int[] mergeSort(int[] nums, int l, int r) {
 		if (l == r) {
 			int[] res = new int[1];
@@ -20,10 +21,10 @@ public class MergeSort {
 			return res;
 		}
 
-		int mid = (l + r) / 2;
+		int mid = (l + r) / 2;  //devide (preorder)
 		int[] left = mergeSort(nums, l, mid);
 		int[] right = mergeSort(nums, mid + 1, r);
-		return merge(left, right);
+		return merge(left, right); //concure (postorder)
 	}
 
 	public static int[] merge(int[] arr1, int[] arr2) {
